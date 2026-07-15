@@ -1,5 +1,7 @@
 # Stage 1: Build the application using Maven
 FROM maven:3.9.6-eclipse-temurin-17 AS builder
+...
+RUN mvn clean package -DskipTests
 WORKDIR /app
 
 # Copy configuration files and source code directories
