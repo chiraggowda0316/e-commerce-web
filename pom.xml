@@ -43,7 +43,7 @@
             <scope>runtime</scope>
         </dependency>
 
-        <!-- Thymeleaf (Optional): Useful if your index.html uses server-side template tags -->
+        <!-- Thymeleaf: For rendering your index.html view mappings -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -59,10 +59,10 @@
 
     <build>
         <plugins>
-            <!-- Spring Boot Maven Plugin: Packages everything into a single executable JAR -->
+            <!-- Fixed Plugin Name: Inherits the 3.2.5 version seamlessly from parent -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>maven-plugin</artifactId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
