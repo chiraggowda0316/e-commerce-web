@@ -9,13 +9,14 @@ pipeline {
             }
         }
 
-        stage('Build & Test') {
+                stage('Build & Test') {
             steps {
                 echo 'Compiling project targets natively...'
-                // Builds artifacts directly via Maven inside the agent environment
-                sh 'mvn clean package -DskipTests'
+                // Added maven.compiler flags to override rigid toolchain constraints on the runner
+                sh 'mvn clean package -DskipTests -Dmaven.compiler.source=17 -Dmaven.compiler.target=17'
             }
         }
+
 
         stage('Docker Deployment') {
             steps {
